@@ -14,6 +14,7 @@ app.use(cors());
 
 mongoose.connect(process.env.URL);
 
+const sanityCheck = require("./sanityCheck");
 const authRouter = require("./routes/auth");
 const devRouter = require("./routes/dev");
 const uploadRouter = require("./routes/upload");
@@ -30,6 +31,8 @@ app.use(helmet);
 app.use(json);
 app.use(static);
 app.use(busboy);
+
+app.use("/", sanityCheck);
 
 app.use("/auth", authRouter);
 app.use("/products", productsRouter);
