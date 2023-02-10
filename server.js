@@ -14,6 +14,7 @@ app.use(cors());
 
 mongoose.connect(process.env.URL);
 
+const reviewRouter = require("./routes/review");
 const sanityCheck = require("./sanityCheck");
 const authRouter = require("./routes/auth");
 const devRouter = require("./routes/dev");
@@ -34,6 +35,7 @@ app.use(busboy);
 
 app.use("/", sanityCheck);
 
+app.use("/review", reviewRouter);
 app.use("/auth", authRouter);
 app.use("/products", productsRouter);
 app.use("/filter", filterRouter);

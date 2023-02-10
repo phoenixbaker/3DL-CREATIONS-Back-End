@@ -5,6 +5,8 @@ const userSchema = new Schema({
   name: String,
   email: String,
   password: String,
+  reviews: [Schema.Types.ObjectId],
+  cart: [Schema.Types.ObjectId],
   dateCreated: {
     type: Date,
     default: Date.now(),
