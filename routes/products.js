@@ -6,7 +6,10 @@ const Product = require("../schemas/Product");
 let conn = mongoose.connection;
 
 router.get("/all", async (req, res) => {
-  let products = await Product.find({});
+  let products = await Product.find({}).populate({
+    path: "ratings",
+    populate: { path: "posted", model: "Review" },
+  });
   return res.send(products);
 });
 
