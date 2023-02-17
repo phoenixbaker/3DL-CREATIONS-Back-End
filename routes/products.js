@@ -8,7 +8,18 @@ let conn = mongoose.connection;
 router.get("/all", async (req, res) => {
   let products = await Product.find({}).populate({
     path: "ratings",
-    populate: { path: "posted", model: "Review" },
+    populate: {
+      path: "posted",
+      model: "Review",
+      populate: {
+        path: "by",
+        model: "User",
+        select: {
+          _id: 1,
+          name: 1,
+        },
+      },
+    },
   });
   return res.send(products);
 });
