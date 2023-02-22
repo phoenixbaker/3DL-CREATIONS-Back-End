@@ -4,7 +4,16 @@ const bcrypt = require("bcrypt");
 const userSchema = new Schema({
   name: String,
   email: String,
+  address: {
+    description: String,
+    place_id: String,
+    types: [String],
+  },
   password: String,
+  confirmed: {
+    type: Boolean,
+    default: false,
+  },
   reviews: [Schema.Types.ObjectId],
   cart: [Schema.Types.ObjectId],
   dateCreated: {

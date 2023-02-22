@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      margin: 0px;
+      padding: 0px;
+      width: 100vw;
+    "
+  >
+    <div
+      class="header"
+      style="
+        width: 100%;
+        background-color: #508aa8;
+        height: 96px;
+        text-align: center;
+      "
+    >
+      <h1 style="margin: 0px; padding: 24px">3DL Creations</h1>
+    </div>
+    <div
+      class="background"
+      style="
+        background-color: #f4f4f4;
+        padding: 10px;
+        color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+      <h2 style="margin: 0px; margin-top: 24px; color: black">
+        Email Verification
+      </h2>
+      <p
+        style="
+          padding: 0px;
+          margin: 0px;
+          margin-top: 18px;
+          margin-bottom: 24px;
+          color: black;
+        "
+      >
+        Thanks for choosing to sign up with us! Please Click the button below to
+        confirm your email.
+      </p>
+      <a href="{{url}}">
+        <button
+          style="
+            background-color: #9dd1f1;
+            border-radius: 1000px;
+            border: none;
+            padding: 16px;
+            color: white;
+            font-size: large;
+            font-weight: 600;
+          "
+        >
+          Confirm Email
+        </button>
+      </a>
+      <p
+        class="subtle"
+        style="
+          padding: 0px;
+          margin: 0px;
+          margin-top: 18px;
+          margin-bottom: 24px;
+          color: black;
+          font-size: 14px;
+        "
+      >
+        Link not working? Try click here <a href="{{url}}">{{url}}</a>
+      </p>
+    </div>
+  </body>
+</html>

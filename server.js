@@ -7,6 +7,10 @@ const helmet = require("helmet")();
 const mongoose = require("mongoose");
 const busboy = require("connect-busboy")();
 
+const path = require("path");
+
+app.use("static", express.static(__dirname + "/public"));
+
 // !!! Remove After Deployment
 
 const cors = require("cors");
