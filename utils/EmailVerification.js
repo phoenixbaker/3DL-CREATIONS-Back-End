@@ -28,12 +28,10 @@ async function SendVerification(user) {
   console.log("here");
   jwt.sign(
     {
-      user: user._id,
+      _id: user._id,
     },
     process.env.JWT_EMAIL_VERIFICATION_SECRET,
-    {
-      expiresIn: "1d",
-    },
+    {},
     (err, emailToken) => {
       const url = `https://api.3dlcreations.com/confirmation/${emailToken}`;
 

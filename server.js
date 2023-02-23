@@ -26,6 +26,7 @@ const uploadRouter = require("./routes/upload");
 const productsRouter = require("./routes/products");
 const downloadRouter = require("./routes/download");
 const filterRouter = require("./routes/filter");
+const confirmationRouter = require("./routes/confirmation");
 
 const statistics = require("./middleware/Statistics");
 
@@ -44,6 +45,8 @@ app.use("/auth", authRouter);
 app.use("/products", productsRouter);
 app.use("/filter", filterRouter);
 app.use("/download", downloadRouter);
+app.use("/confirmation", confirmationRouter);
+
 app.use("/dev/auth", devRouter);
 app.use("/dev/upload", uploadRouter);
 
