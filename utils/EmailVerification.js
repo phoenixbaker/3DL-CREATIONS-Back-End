@@ -9,6 +9,13 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL,
     pass: process.env.EMAIL_PASSWORD,
   },
+  secure: false,
+  requireTLS: true,
+  dkim: {
+    domainName: "3dlcreations.com",
+    keySelector: "email-key",
+    privateKey: process.env.EMAIL_DKIM,
+  },
 });
 
 transporter.use(
@@ -25,7 +32,6 @@ transporter.use(
 );
 
 async function SendVerification(user) {
-  console.log("here");
   jwt.sign(
     {
       _id: user._id,
