@@ -13,7 +13,7 @@ router.get("/:id", async (req, res) => {
     async (err, jwt) => {
       if (err || !jwt) return res.send(err);
 
-      let user = await User.findById(jwt.user);
+      let user = await User.findById(jwt._id);
       if (user.confirmed) return res.send("Email Already Confirmed");
 
       user.confirmed = true;
