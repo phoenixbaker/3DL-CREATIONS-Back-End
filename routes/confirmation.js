@@ -17,8 +17,8 @@ router.get("/:id", async (req, res) => {
       if (user.confirmed) return res.send("Email Already Confirmed");
 
       user.confirmed = true;
-      await user.save();
 
+      await user.save();
       res.send(user);
     }
   );
