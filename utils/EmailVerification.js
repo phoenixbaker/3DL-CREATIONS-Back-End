@@ -1,20 +1,15 @@
-const nodemailer = require("nodemailer");
+const fs = require("fs");
 const jwt = require("jsonwebtoken");
 const path = require("path");
 const hbs = require("nodemailer-express-handlebars");
 
-const transporter = nodemailer.createTransport({
-  service: "Gmail",
+const nodemailer = require("nodemailer");
+
+let transporter = nodemailer.createTransport({
+  service: "gmail",
   auth: {
     user: process.env.EMAIL,
     pass: process.env.EMAIL_PASSWORD,
-  },
-  secure: false,
-  requireTLS: true,
-  dkim: {
-    domainName: "3dlcreations.com",
-    keySelector: "email-key",
-    privateKey: process.env.EMAIL_DKIM,
   },
 });
 
@@ -44,7 +39,7 @@ async function SendVerification(user) {
       transporter
         .sendMail({
           to: user.email,
-          from: '"3DL Creations" <noreply@3dlcreations.com>',
+          from: '"3DL Creations" <no-reply@3dlcreations.com>',
           subject: "Confirm Email - 3DL Creations",
           template: "Verification",
           context: {

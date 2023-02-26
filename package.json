@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.278.0",
+    "@aws-sdk/credential-provider-node": "^3.278.0",
     "bcrypt": "^5.1.0",
     "connect-busboy": "^1.0.0",
     "cors": "^2.8.5",
@@ -22,7 +24,8 @@
     "mongoose": "^6.8.3",
     "multer-gridfs-storage": "^5.0.2",
     "nodemailer": "^6.9.1",
-    "nodemailer-express-handlebars": "^6.0.0"
+    "nodemailer-express-handlebars": "^6.0.0",
+    "sendmail": "^1.6.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
