@@ -28,11 +28,8 @@ const downloadRouter = require("./routes/download");
 const filterRouter = require("./routes/filter");
 const confirmationRouter = require("./routes/confirmation");
 
-const statistics = require("./middleware/Statistics");
-
 app.set("trust proxy", true);
 
-app.use(statistics);
 app.use(helmet);
 app.use(json);
 app.use(static);

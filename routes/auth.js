@@ -13,18 +13,14 @@ router.post("/", async (req, res) => {
 
   if (!user.confirmed) return res.send("Please confirm your email to login");
 
-  let match = await bcrypt.compare(req.body.password, user.password);
+  let match = bcrypt.compare(req.body.password, user.password);
   if (!match) return res.send("Wrong Password");
 
   const authToken = jwt.sign({ user }, process.env.JWT_ACCESS_TOKEN_SECRET);
 
   res.json({
     authToken,
-    user: {
-      name: user.name,
-      email: user.email,
-      dev: user.dev,
-    },
+    user,
   });
 });
 

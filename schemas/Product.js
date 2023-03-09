@@ -7,6 +7,12 @@ const productSchema = new Schema({
   price: String,
   size: String,
   stock: String,
+  searches: [
+    {
+      date: Date,
+      amount: Number,
+    },
+  ],
   ratings: {
     avg: {
       type: Number,
